@@ -5,8 +5,7 @@ import { Add } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
 import "./AddNote.css";
 
-import { addNote } from "../../store/action/noteActions";
-import { updateNote } from "../../store/action/noteActions";
+import { addNote, updateNote } from "../../store/action/noteActions";
 
 const useStyles = makeStyles({
   formFieldStyle: {
@@ -56,7 +55,7 @@ const AddNote = ({ note, setNote }) => {
   };
   return (
     <>
-      <form noValidate autoComplete="off" onSubmit={handleSubmit}>
+      <form noValidate autoComplete="off" onSubmit={handleSubmit} method="post">
         <TextField
           id="enter-note"
           label="Title"
@@ -101,7 +100,7 @@ const AddNote = ({ note, setNote }) => {
           timeout={{ enter: 500, exit: 500 }}
           unmountOnExit
         >
-          <Fab variant="circular" size="small">
+          <Fab variant="circular" size="small" type="submit">
             <Add />
           </Fab>
         </Zoom>

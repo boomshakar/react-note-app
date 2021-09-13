@@ -29,9 +29,9 @@ const NavBar = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   // to see how we signed in
-  const state = useSelector((state) => state);
+  // const state = useSelector((state) => state);
   const auth = useSelector((state) => state.auth);
-  console.log(state);
+  // console.log(state);
 
   const handleSignOut = () => {
     //signOut User
@@ -43,7 +43,7 @@ const NavBar = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <>
-      <AppBar position="fixed">
+      <AppBar position="sticky">
         <CssBaseline />
         <Toolbar>
           {/* ToolBar displays the div as inline block & row */}

@@ -1,0 +1,16 @@
+.mainFooterDivAppBar {
+  background: #00adb5;
+  bottom: 0;
+  position: absolute;
+}
+.footerDiv {
+  display: flex;
+  justify-content: center;
+}
+.footerDivLink {
+  text-decoration: none;
+  color: #eeeeee;
+}
+.footerDivLink:hover {
+  text-decoration: underline;
+}

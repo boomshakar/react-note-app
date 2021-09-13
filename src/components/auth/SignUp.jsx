@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 
+import { NavLink as Link } from "react-router-dom";
 import { Typography, TextField, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -9,7 +10,7 @@ import { signUp } from "../../store/action/authActions";
 
 const useStyles = makeStyles({
   formStyle: {
-    margin: "5rem 1rem auto",
+    margin: "1.5rem 1rem auto",
     padding: "30px",
     borderRadius: "9px",
     boxShadow: "0px 0px 12px -3px #000000",
@@ -17,6 +18,12 @@ const useStyles = makeStyles({
   notchedOutline: {
     borderWidth: "1px",
     borderColor: "#00adb5 !important",
+  },
+  belowForm: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginTop: "20px",
   },
   spacing: {
     marginTop: "20px",
@@ -100,14 +107,21 @@ const SignUp = () => {
           value={user.password}
           onChange={(e) => setUser({ ...user, password: e.target.value })}
         />
-        <Button
-          variant="contained"
-          color="primary"
-          type="submit"
-          className={classes.spacing}
-        >
-          SignUp
-        </Button>
+        <div className={classes.belowForm}>
+          <Button
+            variant="contained"
+            type="submit"
+            style={{
+              background: "#00adb5",
+              color: "#eeeeee",
+            }}
+          >
+            SignUp
+          </Button>
+          <Typography variant="subtitle2">
+            Registered? <Link to="/signin">Sign In</Link>
+          </Typography>
+        </div>
       </form>
     </>
   );
