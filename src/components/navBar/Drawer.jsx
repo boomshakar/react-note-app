@@ -68,10 +68,7 @@ const DrawerComponent = () => {
           </ListItem>
           {auth._id ? (
             <>
-              <Typography
-                variant="subtitle2"
-                className={classes.root.classes.linkStyle}
-              >
+              <Typography variant="subtitle2" className={classes.root}>
                 Logged in as {auth.name}
               </Typography>
 
