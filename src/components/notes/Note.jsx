@@ -22,6 +22,9 @@ const useStyles = makeStyles({
     borderRadius: "9px",
   },
   noteStyleSub: {
+    padding: "20px",
+    border: "2px solid #bdbdbd",
+    borderRadius: "9px",
     margin: "2rem auto",
     display: "flex",
     justifyContent: "space-between",
@@ -121,7 +124,7 @@ const Note = ({ note, setNote }) => {
         </>
       ) : (
         <>
-          <div className={classes.noteStyle.classes.noteStyleSub}>
+          <div className={classes.noteStyleSub}>
             <div>
               {note.isComplete ? (
                 <>
